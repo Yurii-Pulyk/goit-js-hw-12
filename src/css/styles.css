@@ -16,3 +16,190 @@
 @import url('./badges.css');
 @import url('./back-link.css');
 @import url('./footer.css');
+
+
+.btn-search:hover {
+  background-color: #5c6172;
+}
+
+.loader {
+  width: 16px;
+  height: 16px;
+  box-shadow: 0 30px, 0 -30px;
+  border-radius: 4px;
+  background: currentColor;
+  display: block;
+  margin: 40vh auto 0;
+  position: relative;
+  color: #FFF;
+  transform: translateY(30px);
+  box-sizing: border-box;
+  animation: animloader 2s ease infinite;
+}
+
+.loader::after,
+.loader::before {
+  content: '';
+  box-sizing: border-box;
+  width: 16px;
+  height: 16px;
+  box-shadow: 0 30px, 0 -30px;
+  border-radius: 4px;
+  background: currentColor;
+  color: #FFF;
+  position: absolute;
+  left: 30px;
+  top: 0;
+  animation: animloader 2s 0.2s ease infinite;
+}
+
+.loader::before {
+  animation-delay: 0.4s;
+  left: 60px;
+}
+
+@keyframes animloader {
+  0% {
+      top: 0;
+      color: white;
+  }
+
+  50% {
+      top: 30px;
+      color: rgba(255, 255, 255, 0.2);
+  }
+
+  100% {
+      top: 0;
+      color: white;
+  }
+}
+body {
+  font-family: Arial, sans-serif;
+}
+
+form {
+  margin: 20px;
+}
+
+.loader {
+  text-align: center;
+  font-size: 20px;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.gallery__item {
+  width: calc(25% - 10px);
+  text-align: center;
+}
+
+.gallery__item img {
+  max-width: 100%;
+  height: auto;
+}
+
+.info {
+  margin-top: 10px;
+}
+
+.info-item {
+  font-weight: 600;
+font-size: 12px;
+
+
+line-height: 1.33333;
+letter-spacing: 0.04em;
+color: #2e2f42;
+}
+
+/* доробка */
+
+/* Загальний стиль для body */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+}
+
+/* Контейнер для форми */
+.form-container {
+  display: flex;
+  /* justify-content: center; */
+  align-items: flex-start; 
+   flex-direction: column;
+  margin-top: 36px; 
+}
+
+/* Стиль для інпуту */
+.js-search input[type="text"] {
+  width: 272px;
+  height: 40px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+/* Стиль для кнопки */
+.js-search button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 91px;
+  height: 40px;
+  background-color: #4e75ff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* Відстань між інпутом і кнопкою */
+.js-search {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 8px;
+}
+
+/* Стилізація кнопки Load more */
+ 
+.load-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 125px;
+  height: 40px;
+  background-color: #4e75ff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  box-sizing: border-box;
+  margin: 20px auto; 
+}
+
+/* Стилізація кнопки при наведенні курсора */
+.load-more:hover {
+  background-color: #5c6172;
+}
