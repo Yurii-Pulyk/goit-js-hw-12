@@ -6,7 +6,7 @@ let page = 1;
 const perPage = 15;
 
 export async function getPictures(query, resetPage = false) {
-  if (resetPage) page = 1; // Якщо новий запит, скидаємо номер сторінки
+  if (resetPage) page = 1; 
 
   const params = new URLSearchParams({
     key: API_KEY,
@@ -20,7 +20,7 @@ export async function getPictures(query, resetPage = false) {
 
   try {
     const response = await axios.get(`${BASE_URL}?${params.toString()}`);
-    page += 1; // Збільшуємо номер сторінки для наступного запиту
+    page += 1; 
     return response.data;
   } catch (error) {
     throw error;
