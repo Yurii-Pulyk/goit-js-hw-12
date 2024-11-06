@@ -5,11 +5,11 @@ import 'izitoast/dist/css/iziToast.min.css';
 
 const form = document.getElementById('form');
 const loader = document.querySelector('.loader');
-const loadMoreBtn = document.createElement('button');  // Створюємо кнопку Load more
+const loadMoreBtn = document.createElement('button');
 loadMoreBtn.textContent = 'Load more';
 loadMoreBtn.style.display = 'none';
 loadMoreBtn.classList.add('load-more');
-document.body.appendChild(loadMoreBtn);  // Додаємо кнопку під галерею
+document.body.appendChild(loadMoreBtn); 
 
 let searchValue = '';
 
@@ -23,21 +23,20 @@ form.addEventListener('submit', async (event) => {
     return;
   }
 
-  loadMoreBtn.style.display = 'none'; // Ховаємо кнопку при новому запиті
-  loader.style.display = 'block';  // Показуємо лоадер
-
+  loadMoreBtn.style.display = 'none';
+  loader.style.display = 'block';  
   try {
     const data = await getPictures(searchValue, true);
-    loader.style.display = 'none';  // Ховаємо лоадер
+    loader.style.display = 'none'; 
 
     if (data.hits.length === 0) {
       iziToast.info({ message: 'Sorry, there are no images matching your search query. Please try again!' });
     } else {
-      renderPictures(data.hits);  // Виводимо зображення
-      loadMoreBtn.style.display = 'block';  // Показуємо кнопку, якщо є зображення
+      renderPictures(data.hits); 
+      loadMoreBtn.style.display = 'block';  
     }
   } catch (error) {
-    loader.style.display = 'none';  // Ховаємо лоадер
+    loader.style.display = 'none'; 
     iziToast.error({ title: 'Error', message: error.message });
   }
 });
@@ -51,10 +50,10 @@ loadMoreBtn.addEventListener('click', async () => {
 
     if (data.hits.length === 0) {
       iziToast.info({ message: "We're sorry, but you've reached the end of search results." });
-      loadMoreBtn.style.display = 'none'; // Ховаємо кнопку, якщо більше немає зображень
+      loadMoreBtn.style.display = 'none'; 
     } else {
       renderPictures(data.hits);
-      smoothScroll();  // Плавне прокручування
+      smoothScroll();  
     }
   } catch (error) {
     loader.style.display = 'none';
