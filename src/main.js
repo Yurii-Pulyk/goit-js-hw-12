@@ -48,7 +48,7 @@ loadMoreBtn.addEventListener('click', async () => {
     const data = await getPictures(searchValue);
     loader.style.display = 'none';
 
-    if (data.hits.length === 0) {
+    if (currentHits >= totalHits) {
       iziToast.info({ message: "We're sorry, but you've reached the end of search results." });
       loadMoreBtn.style.display = 'none'; 
     } else {
