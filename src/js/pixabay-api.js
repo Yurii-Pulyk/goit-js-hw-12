@@ -26,3 +26,4 @@ export async function getPictures(query, resetPage = false) {
     throw error;
   }
 }
+

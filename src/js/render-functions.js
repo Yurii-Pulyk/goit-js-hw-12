@@ -22,3 +22,6 @@ export function renderPictures(pictures) {
 }
   const lightbox = new SimpleLightbox('.gallery a');
   lightbox.refresh();
+
+
+
