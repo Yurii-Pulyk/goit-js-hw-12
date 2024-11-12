@@ -1,8 +1,11 @@
+
+
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 
 export const gallery = document.querySelector('.gallery');
 
+let lightbox = null;  // Глобальний інстанс SimpleLightbox
 
 export function renderPictures(pictures) {
   const markup = pictures.map(({ webformatURL, largeImageURL, tags, likes, views, comments, downloads }) => {
@@ -19,9 +22,13 @@ export function renderPictures(pictures) {
   }).join('');
 
   gallery.insertAdjacentHTML('beforeend', markup);
+
+  if (!lightbox) {
+    lightbox = new SimpleLightbox('.gallery a');  // Ініціалізація при першому рендері
+  } else {
+    lightbox.refresh();  // Оновлення при рендері нових зображень
+  }
 }
-  const lightbox = new SimpleLightbox('.gallery a');
-  lightbox.refresh();
 
 
 

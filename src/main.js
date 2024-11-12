@@ -5,6 +5,8 @@ import { getPictures } from './js/pixabay-api';
 import { renderPictures, gallery } from './js/render-functions';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
+import "simplelightbox/dist/simple-lightbox.min.css";
+
 
 const form = document.getElementById('form');
 const loader = document.querySelector('.loader');
